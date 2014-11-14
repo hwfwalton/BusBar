@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,38 +6,108 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.example.servtest.MainActivity" >
-    
-    <LinearLayout 
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" >
-    	<TextView
-     		android:layout_width="wrap_content"
-     		android:layout_height="wrap_content"
-     		android:text="@string/hello_world" />
+    tools:context="com.example.guitest.MainActivity" >
+
+    <TextView
+        android:id="@+id/selectAgencyButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/button_margin"
+        android:padding="@dimen/button_padding"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/agency_button_color_selector"        
+        android:onClick="buttonPress"
+        android:clickable="true"
+        android:enabled="false"
+        />
+
+
+
+    <TextView
+        android:id="@+id/selectRouteButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectAgencyButton"
+        android:layout_margin="@dimen/button_margin"
+        android:padding="@dimen/button_padding"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/route_button_color_selector"        
+        android:onClick="buttonPress"
+        android:clickable="true"
+        android:enabled="false"
+        />
+
+
+
+    <TextView
+        android:id="@+id/selectStopButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectRouteButton" 
+        android:layout_margin="@dimen/button_margin"
+        android:padding="@dimen/button_padding"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/stop_button_color_selector"        
+        android:onClick="buttonPress"
+        android:clickable="true"
+        android:enabled="false"     
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="?android:attr/dividerVertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+		    <Button
+		        android:id="@+id/setStop1Button"
+		        style="?android:attr/buttonBarButtonStyle"
+		        android:layout_width="0dp"
+		        android:layout_weight="1"
+		        android:layout_height="wrap_content"
+		        android:onClick="buttonPress"
+		        android:background="?android:attr/selectableItemBackground"
+		        android:text="@string/setStop1Button" />
+		
+		    <Button
+		        android:id="@+id/setStop2Button"
+		        style="?android:attr/buttonBarButtonStyle"
+		        android:layout_width="0dp"
+	            android:layout_weight="1"
+		        android:layout_height="wrap_content"
+		        android:onClick="buttonPress"
+		        android:background="?android:attr/selectableItemBackground"
+		        android:text="@string/setStop2Button" />
+	    </LinearLayout>
+	    
+	    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+		    <Button
+		        android:id="@+id/startServiceButton"
+		        style="?android:attr/buttonBarButtonStyle"
+		        android:layout_width="0dp"
+	            android:layout_weight="1"
+		        android:layout_height="wrap_content"
+		        android:onClick="buttonPress"
+		        android:background="?android:attr/selectableItemBackground"
+		        android:text="@string/startServiceButton" />
+		
+		    <Button
+		        android:id="@+id/stopServiceButton"
+		        style="?android:attr/buttonBarButtonStyle"
+		        android:layout_width="0dp"
+	            android:layout_weight="1"
+		        android:layout_height="wrap_content"
+		        android:onClick="buttonPress"
+		        android:background="?android:attr/selectableItemBackground"
+		        android:text="@string/stopServiceButton" />
+	    </LinearLayout>
     </LinearLayout>
-    
-	<LinearLayout
-	    android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-	    <Button
-	        android:id="@+id/start_serv_button"
-	        android:layout_width="0dp"
-	        android:layout_weight="2"
-	        android:layout_height="wrap_content"
-	        android:text="@string/start_service" 
-	        android:onClick="startService" />
-	    <Space 
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"/>
-    	<Button
-    	    android:id="@+id/stop_serv_button"
-	        android:layout_width="0dp"
-	        android:layout_weight="2"
-	        android:layout_height="wrap_content"
-	        android:text="@string/stop_service" 
-	        android:onClick="stopService" />
-    </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>
