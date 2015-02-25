@@ -9,3 +9,6 @@ Currently working on the UI. Not very intuitive how selecting stops works, and h
 Long term ideas:
 Use GPS to dynamically choose the closest bus stop to display times for.
 Store offline copy of the bus schedule and revert to that when there's limited internet.
+
+Screencaps and basic walkthrough:
+http://imgur.com/a/iolcc
